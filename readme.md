@@ -211,10 +211,10 @@ Compress those files and move in a 'archive' folder.
 # Purpose of the script?
    ######### Steps of script ##########
 
-<i. Povide the path of directory>
-#<ii. Check if the directory is present or not>
-#<iii. Create 'archive' folder if not already present.>
-#<iv. Find all the files with size more than 20MB>
-#<v. Compress each file>
-#<vi. Move the compressed files in 'archive' folder.>
-#<vii. Make a cron job to run the script every day at given time.>
+i. Povide the path of directory<br/>
+ii. Check if the directory is present or not<br/>
+iii. Create 'archive' folder if not already present.<br/>
+iv. Find all the files with size more than 20MB.<br/>
+v. Compress each fil.<br/>
+vi. Move the compressed files in 'archive' folder.<br/>
+vii. Make a cron job to run the script every day at given time.
