@@ -143,7 +143,7 @@ Example: #logger "Hello world"
 DEBUGGING SCRIPTS
 ####################
 
-I we can anable the debugging of teh script using below in the script
+## IF we can anable the debugging of teh script using below in the script
 
 $set -x
 
