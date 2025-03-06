@@ -1,0 +1,24 @@
+arguments
+arithmetic_ops.sh
+arrays.sh
+break_with_forloop.sh
+comments.sh
+conditional_statement
+connectivity_check.sh
+constant-var.sh
+continue_with_for_loop.sh
+dice_random_no.sh
+exit_from_loop.sh
+file_exit_check.sh
+file.txt
+function
+key_value_array.sh
+loops
+reame.md
+root_user_check.sh
+string-ops.sh
+test1.csv
+user_interaction.sh
+variable.sh
+Fri Feb 28 09:47:46 PM UTC 2025
+testserver
