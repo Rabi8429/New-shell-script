@@ -218,3 +218,21 @@ iv. Find all the files with size more than 20MB.<br/>
 v. Compress each fil.<br/>
 vi. Move the compressed files in 'archive' folder.<br/>
 vii. Make a cron job to run the script every day at given time.
+
+
+######   ls -lh  command showing file with size(KB, MB)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

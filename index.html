@@ -1,1 +1,78 @@
-This is my static website
+sudo apt update
+sudo apt install nginx -y
+sudo apt install certbot python3-certbot-nginx -y
+sudo mkdir -p /var/www/greensky.bar/html
+sudo chown -R $USER:$USER /var/www/greensky.bar/html
+sudo chown -R 755 /var/www/greensky.bar/html
+sudo nano /var/www/greensky.bar/html/index.html
+<html>
+    <head>
+        <title>Welcome to greensky.bar!</title>
+    </head>
+    <body>
+        <h1>Success! The greensky.bar server bolck in working!</h1>
+    </body>
+</html>
+
+sudo nano /etc/nginx/sites-available/greensky.bar
+server{
+       listen 80;
+       listen [::]:80;
+
+       root /var/www/greensky.bar/html;
+       index index.html index.html index.nginx-debian.html;
+       server_name greensky.bar failover.greensky.bar latency.greensky.bar weighted.greensky.bar geolocation.greensky.bar www.greensky.bar;
+       location / {
+        try_files $uri $uri/ =404;
+       }
+
+}
+
+sudo ln -s /etc/nginx/sites-available/greensky.bar  /etc/nginx/sites-enabled/
+
+sudo nginx -t 
+sudo systemctl restart nginx
+
+
+sudo certbot certonly \
+     --agree-tos \
+     --email kartik.aws@outlook.com \
+     --manul \
+     --preferred-challenges=dns \
+     -d *.greensky.bar \
+     --server https://acme-v02.api.letsencrypt.org/directory
+
+
+
+
+     If we need to get indiviual ssl certs we can perform following:
+     certbot --nginx
+
+
+
+
+
+
+
+
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+
+
+
+###################################
+
+
+#!/bin/bash
+
+sudo yum update 
+
+sudo amazon-linux-extras install nginx1.12 -y
+
+sudo echo "<h1>$(cat /etc/hostname)</h1>" >> /usr/share/nginx/html/index.html
+
+sudo amazon-linux-extras install epel -y
+
+sudo systemctl restart nginx
+
+sudo systemctl enable nginx 

@@ -1,0 +1,34 @@
+---
+- name: Installing nginx
+  apt:           # Using the apt module for package manageme module for package 
+    name: nginx    # Name of the package 
+    state: present  # Ensure the package is installed
+- name: Start Nginx
+  service:          # Using the service module to manage the service
+    name: nginx
+    state: started
+     enabled: true     # Ensure Nginx is enabled to start on boot
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /var/www/greensky.bar/html
+    state: directory
+    owner: USER
+    group: USER
+    mode: '0755'
+- name: Copy index file!!!
+  ansible.builtin.template:
+    src: /templates/index.html
+    dest:  /var/www/greensky.bar/html/
+  notify:
+        - Restart nginx
+- name: Copy config file 
+  ansible.builtin.copy:
+    src: /files/greensky.conf
+    dest: /etc/nginx/sites-available/greensky.conf
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/
+    dest: /etc/nginx/sites-enabled/
+    owner: USER
+    group: USER
+    state: link
